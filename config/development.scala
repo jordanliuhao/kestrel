@@ -63,6 +63,11 @@ new KestrelConfig {
   } :: new QueueBuilder {
     name = "slow"
     syncJournal = 10.milliseconds
+  } :: new QueueBuilder {
+    name = "pushPending"
+    expireToQueue = "pushReady"
+  } :: new QueueBuilder {
+  	name = "pushReady"
   }
 
   aliases = new AliasBuilder {

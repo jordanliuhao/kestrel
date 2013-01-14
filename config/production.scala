@@ -41,6 +41,11 @@ new KestrelConfig {
     // remaining contents will be lost.
     name = "transient_events"
     keepJournal = false
+  } :: new QueueBuilder {
+    name = "pushPending"
+    expireToQueue = "pushReady"
+  } :: new QueueBuilder {
+  	name = "pushReady"
   }
 
   loggers = new LoggerConfig {
