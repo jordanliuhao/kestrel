@@ -66,6 +66,7 @@ new KestrelConfig {
   } :: new QueueBuilder {
     name = "pushPending"
     expireToQueue = "pushReady"
+    maxAge = 50.seconds
   } :: new QueueBuilder {
   	name = "pushReady"
   }
@@ -79,7 +80,7 @@ new KestrelConfig {
   }
 
   loggers = new LoggerConfig {
-    level = Level.INFO
+    level = Level.DEBUG
     handlers = new FileHandlerConfig {
       filename = "/var/log/kestrel/kestrel.log"
       roll = Policy.Never

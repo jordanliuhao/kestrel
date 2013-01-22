@@ -44,6 +44,7 @@ new KestrelConfig {
   } :: new QueueBuilder {
     name = "pushPending"
     expireToQueue = "pushReady"
+    maxAge = 50.seconds
   } :: new QueueBuilder {
   	name = "pushReady"
   }
